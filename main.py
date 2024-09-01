@@ -13,8 +13,8 @@ xgb_model = XGBoostModel()
 
 # Model to instance mapping
 MODELS = {
-    "Model_A": lr_model,
-    "Model_B": xgb_model
+    "Logistic Regression": lr_model,
+    "XGBoost": xgb_model
 }
 
 def load_model(model_name, version):
@@ -41,17 +41,17 @@ if 'dummy_comments' not in st.session_state:
     ]
 
 if 'model' not in st.session_state:
-    st.session_state.model = load_model("Model_A", "1")  # Load default model and version
-    st.session_state.model_name = "Model_A"
+    st.session_state.model = load_model("Logistic Regression", "1")  # Load default model and version
+    st.session_state.model_name = "Logistic Regression"
     st.session_state.model_version = "1"
 
 # Top bar with name and version
 st.sidebar.title('Comment Toxicity Detection')
-st.sidebar.text('Model Version: 1.0')
+st.sidebar.text(f'{st.session_state.model_name} Version: {st.session_state.model_version}')
 
 # Model selection with default values
 st.sidebar.header('Select Model')
-model_name = st.sidebar.selectbox('Choose a model:', ['Model_A', 'Model_B'], index=0)
+model_name = st.sidebar.selectbox('Choose a model:', ['Logistic Regression', 'XGBoost'], index=0)
 model_version = st.sidebar.selectbox('Choose a version:', ['1'], index=0)
 
 # Load the selected model if it has changed
