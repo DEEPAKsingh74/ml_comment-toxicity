@@ -2,3 +2,4 @@ joblib
 xgboost
 streamlit
 logging
+sklearn
