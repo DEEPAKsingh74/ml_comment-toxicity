@@ -50,8 +50,8 @@ An alternative version of the project is available with a more comprehensive imp
 
 ### Prerequisites
 
-- Docker
-- Docker Compose
+- Python 3.8 or higher
+- pip (Python package installer)
 
 ### Installation
 
@@ -65,12 +65,18 @@ An alternative version of the project is available with a more comprehensive imp
     cd your-repo-directory
     ```
 
-3. Build and start the Docker containers:
+3. Install the required packages:
     ```bash
-    docker-compose up --build
+    pip install -r requirements.txt
     ```
 
-4. Access the application at `http://localhost:8501`.
+4. Run the Streamlit app:
+    ```bash
+    python -m streamlit run main.py
+    ```
+
+5. Access the application at `http://localhost:8501`.
+
 
 ## Contributing
 
@@ -82,8 +88,4 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For any inquiries or support, please contact [your-email@example.com].
-
----
-
-**Note:** Replace `your-repo-url`, `your-repo-directory`, and `your-email@example.com` with the appropriate details.
+For any inquiries or support, please contact [deepak74singh@gmail.com].
